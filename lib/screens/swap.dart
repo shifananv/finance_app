@@ -1,3 +1,5 @@
+import 'package:financeapp/screens/homepage.dart';
+import 'package:financeapp/widgets/nav.dart';
 import 'package:flutter/material.dart';
 
 class SwapScreen extends StatefulWidget {
@@ -22,10 +24,15 @@ class _SwapScreenState extends State<SwapScreen> {
         ),
         centerTitle: true,
         backgroundColor: const Color(0xFF17171F),
-        leading: const Icon(
-          Icons.keyboard_arrow_left,
-          color: Colors.white,
-          size: 40,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          },
+          child: const Icon(
+            Icons.keyboard_arrow_left,
+            color: Colors.white,
+            size: 40,
+          ),
         ),
       ),
       body: Column(
@@ -93,30 +100,18 @@ class _SwapScreenState extends State<SwapScreen> {
                       borderRadius: BorderRadius.circular(107),
                     ),
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        '\$',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                          height: 0,
-                        ),
-                      ),
-                    ],
+                    children: [Image.asset('assets/images/icon.png',width: 14,)],
                   ),
                 ),
                 const SizedBox(
                   width: 15,
                 ),
                 const Text(
-                  'USD',
+                  'Ethereum',
                   style: TextStyle(
                     color: Color(0xFFF5F5F5),
                     fontSize: 16,
@@ -125,23 +120,48 @@ class _SwapScreenState extends State<SwapScreen> {
                     height: 0,
                   ),
                 ),
+                const SizedBox(width: 5,),
+                Image.asset('assets/images/downarrow.png'),
                 const SizedBox(
                   width: 10,
                 ),
-                Image.asset('assets/images/downarrow.png'),
-                const SizedBox(
-                  width: 190,
+                Image.asset('assets/images/downarrow.png',
+                width: 1,
+                height: 1,
                 ),
-                const Text(
-                  '\$270.00',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: Color(0xFFF5F5F5),
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    height: 0,
-                  ),
+                const SizedBox(
+                  width: 147,
+                ),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      '0.15ETH',
+                      style: TextStyle(
+                        color: Color(0xFFF5F5F5),
+                        fontSize: 16,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      '\$270.61',
+                      style: TextStyle(
+                        color: Color(0xFFAAAAAA),
+                        fontSize: 14,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -149,18 +169,24 @@ class _SwapScreenState extends State<SwapScreen> {
           const SizedBox(
             height: 32,
           ),
-          const Padding(
-            padding: EdgeInsets.only(right: 270),
-            child: Text(
-              'You receive',
-              style: TextStyle(
-                color: Color(0xFFF5F5F5),
-                fontSize: 20,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-                height: 0,
+           Row(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 16),
+                child: Text(
+                  'You receive',
+                  style: TextStyle(
+                    color: Color(0xFFF5F5F5),
+                    fontSize: 20,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                    height: 0,
+                  ),
+                ),
               ),
-            ),
+              const SizedBox(width: 230,),
+              Image.asset('assets/images/swap.png'),
+            ],
           ),
           const SizedBox(
             height: 10,
@@ -205,8 +231,9 @@ class _SwapScreenState extends State<SwapScreen> {
                   width: 152,
                 ),
                 const Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const SizedBox(
+                     SizedBox(
                       height: 15,
                     ),
                     Text(
@@ -220,7 +247,7 @@ class _SwapScreenState extends State<SwapScreen> {
                         height: 0,
                       ),
                     ),
-                    const SizedBox(
+                     SizedBox(
                       height: 5,
                     ),
                     Text(
@@ -306,6 +333,7 @@ class _SwapScreenState extends State<SwapScreen> {
               ],
             ),
           ),
+          //const NavProvider()
         ],
       ),
     );

@@ -1,7 +1,13 @@
+import 'package:financeapp/screens/academy.dart';
+import 'package:financeapp/screens/buyandsell.dart';
+import 'package:financeapp/screens/coin_info.dart';
+import 'package:financeapp/screens/coming_soon.dart';
 import 'package:financeapp/screens/receive.dart';
 import 'package:financeapp/screens/send.dart';
+import 'package:financeapp/screens/settings.dart';
 import 'package:financeapp/screens/swap.dart';
 import 'package:financeapp/widgets/coincard.dart';
+import 'package:financeapp/widgets/nav.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,11 +52,13 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     height: 30,
                   ),
-                  const Row(
+                   Row(
                     children: [
-                      Icon(Icons.add, color: Colors.white),
-                      Spacer(),
-                      Icon(Icons.qr_code, color: Colors.white)
+                      const SizedBox(width: 21,),
+                      Image.asset('assets/images/div.png',height: 29,),
+                      const Spacer(),
+                      const Icon(Icons.qr_code, color: Colors.white),
+                      const SizedBox(width: 13,),
                     ],
                   ),
                   const SizedBox(
@@ -233,7 +241,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 const Spacer(),
                 Container(
-                  width: 164,
+                  width: 190,
                   height: 28,
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   clipBehavior: Clip.antiAlias,
@@ -261,64 +269,114 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                Container(
-                  width: 164,
-                  height: 28,
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  clipBehavior: Clip.antiAlias,
-                  decoration: ShapeDecoration(
-                    color: const Color(0xFF252530),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
-                  ),
-                  child: const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'NFT',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 14,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w500,
-                          height: 0.09,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ComingSoonScreeen()),
+                    );
+                  },
+                  child: Container(
+                    width: 190,
+                    height: 28,
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    clipBehavior: Clip.antiAlias,
+                    decoration: ShapeDecoration(
+                      color: const Color(0xFF252530),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'NFT',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            height: 0.09,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 const Spacer(),
               ],
             ),
-            const SingleChildScrollView(
+            SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  CoinCard(),
-                  SizedBox(
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CoininfoScreen()),
+                        );
+                      },
+                      child: const CoinCard()),
+                  const SizedBox(
                     height: 15,
                   ),
-                  CoinCard(),
-                  SizedBox(
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CoininfoScreen()),
+                        );
+                      },
+                      child: const CoinCard()),
+                  const SizedBox(
                     height: 15,
                   ),
-                  CoinCard(),
-                  SizedBox(
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CoininfoScreen()),
+                        );
+                      },
+                      child: const CoinCard()),
+                  const SizedBox(
                     height: 15,
                   ),
-                  CoinCard(),
-                  SizedBox(
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CoininfoScreen()),
+                        );
+                      },
+                      child: const CoinCard()),
+                  const SizedBox(
                     height: 15,
                   ),
-                  CoinCard(),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CoininfoScreen()),
+                        );
+                      },
+                      child: const CoinCard()),
                 ],
               ),
-            )
+            ),
+            //const NavProvider(),
           ],
         ),
       ),

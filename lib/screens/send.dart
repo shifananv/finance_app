@@ -1,3 +1,5 @@
+import 'package:financeapp/screens/homepage.dart';
+import 'package:financeapp/widgets/nav.dart';
 import 'package:flutter/material.dart';
 
 class SendScreen extends StatefulWidget {
@@ -22,10 +24,15 @@ class _SendScreenState extends State<SendScreen> {
         ),
         centerTitle: true,
         backgroundColor: const Color(0xFF17171F),
-        leading: const Icon(
-          Icons.keyboard_arrow_left,
-          color: Colors.white,
-          size: 40,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          },
+          child: const Icon(
+            Icons.keyboard_arrow_left,
+            color: Colors.white,
+            size: 40,
+          ),
         ),
       ),
       body: Column(
@@ -260,7 +267,9 @@ class _SendScreenState extends State<SendScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 260,),
+          const SizedBox(
+            height: 260,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 42),
             child: Container(
@@ -292,7 +301,8 @@ class _SendScreenState extends State<SendScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          //const NavProvider()
         ],
       ),
     );

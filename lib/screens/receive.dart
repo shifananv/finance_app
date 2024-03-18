@@ -1,3 +1,5 @@
+import 'package:financeapp/screens/homepage.dart';
+import 'package:financeapp/widgets/nav.dart';
 import 'package:flutter/material.dart';
 
 class ReceiveScreen extends StatefulWidget {
@@ -22,10 +24,15 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
         ),
         centerTitle: true,
         backgroundColor: const Color(0xFF17171F),
-        leading: const Icon(
-          Icons.keyboard_arrow_left,
-          color: Colors.white,
-          size: 40,
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          },
+          child: const Icon(
+            Icons.keyboard_arrow_left,
+            color: Colors.white,
+            size: 40,
+          ),
         ),
       ),
       body: Center(
@@ -214,7 +221,8 @@ class _ReceiveScreenState extends State<ReceiveScreen> {
                   ),
                 ),
               ],
-            )
+            ),
+            //const NavProvider()
           ],
         ),
       ),

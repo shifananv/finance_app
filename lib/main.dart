@@ -1,4 +1,5 @@
 import 'package:financeapp/screens/homepage.dart';
+import 'package:financeapp/widgets/nav.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.black, 
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home:  NavProvider(),
+      
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:financeapp/screens/coin_info.dart';
 import 'package:flutter/material.dart';
 
 class CoinCard extends StatelessWidget {
@@ -6,7 +7,7 @@ class CoinCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 328,
+      width: 380,
       height: 80,
       decoration: ShapeDecoration(
         color: const Color(0xFF252530),
@@ -58,7 +59,9 @@ class CoinCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 5,),
+                SizedBox(
+                  height: 5,
+                ),
                 Text(
                   '\$4,179.12',
                   textAlign: TextAlign.center,
